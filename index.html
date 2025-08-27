@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CHANGE ME</title>
+    <title>leirabackwards</title>
   </head>
 
   <body>
     <!-- All content goes here -->
     <div id="all-contents">
-      
+      <nav>
+        <h1>Ariel's website</h1>
+        <ul id="nav-ul">
+          <li class="nav-li">
+            <a href="index.html">home</a>
+          </li>
+          <li class="nav-li">
+            <a href="portfolio.html">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <div class="sidebar">
+          <img
+            class="sidebar-img"
+            src="data:image/png;base64,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"
+          />
+        </div>
+        <div class="content">
+          <h2>Ariel fields</h2>
+          <p>Junior at G.W Carver high school</p>
+          <div id="interests">
+            <h3>Interests</h3>
+            <ul>
+              <li>Editing</li>
+              <li>kpop</li>
+              <li>Tiktok</li>
+            </ul>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>
