@@ -14,10 +14,10 @@ var score = 0; // variable to keep track of the score
 var started = false; // variable to keep track of whether the game has started
 
 // TODO 4, Part 1: Create the apple variable
-
+var apple {};
 
 // TODO 5, Part 1: Create the snake variable
-
+var snake = {};
 
 // Constant Variables
 var ROWS = 20;
@@ -207,9 +207,11 @@ function endGame() {
  */
 function makeApple() {
   // TODO 4, Part 2: Fill in this function's code block
-
-
-
+apple.element = $("<div>").addClass("apple").appendTo(board);
+var randomPosition = getRandomAvailablePosition();
+apple.row = randomPosition.row;
+apple.column = randomPosition.column;
+repositionSquare(apple);
 }
 
 /* Create an HTML element for a snakeSquare using jQuery. Then, given a row and
@@ -258,7 +260,7 @@ function repositionSquare(square) {
   var row = square.row;
   var column = square.column;
 
-  var buffer = 20;
+  var buffer = 20;a
 
   // position the square on the screen according to the row and column
   squareElement.css("left", column * SQUARE_SIZE + buffer);
