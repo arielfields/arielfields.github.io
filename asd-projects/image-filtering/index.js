@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
+applyFilter()
   
 
   // do not change the below line of code
@@ -31,14 +31,25 @@ function applyAndRender() {
 // "apply" and "filter" functions should go below here //
 /////////////////////////////////////////////////////////
 
+
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
+function applyFilter(){
+for (var row = 0; row < image.length ; row += 1 ){
+  var currentArray = image[row]
+  for (var col = 0; col < currentArray.length ; col += 1){
+    console.log(image[row][col]);
+  }
+}
+}
 
 
 // TODO 9 Create the applyFilterNoBackground function
 
 
 // TODO 6: Create the keepInBounds function
-
+function keepInBounds(){
+  
+}
 
 // TODO 4: Create reddify filter function
 
