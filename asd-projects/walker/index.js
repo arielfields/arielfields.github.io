@@ -98,11 +98,11 @@ function runProgram() {
     $("#walker").css("left", walker.x + "px");
     $("#walker").css("top", walker.y + "px");
   }
-  function endGame() {
-    // stop the interval timer
-    clearInterval(interval);
+}
+function endGame() {
+  // stop the interval timer
+  clearInterval(interval);
 
-    // turn off event handlers
-    $(document).off();
-  }
+  // turn off event handlers
+  $(document).off();
 }
