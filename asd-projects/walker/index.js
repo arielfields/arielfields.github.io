@@ -46,6 +46,7 @@ function runProgram() {
   */
   function newFrame() {
     repositionGameItem();
+    wallCollision();
     redrawGameItem();
     console.log("Walker position:", walker.x, walker.y);
   }
@@ -70,13 +71,25 @@ function runProgram() {
       walker.speedY = 5;
     }
   }
-  function handleKeyUp(event) {
-    
-  }
+  function handleKeyUp(event) {}
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+  function wallCollision() {
+    if (walker.x < 0) {
+      walker.x -= walker.speedX;
+    }
+    if (walker.x > $("#board").width() - $("walker").width()) {
+      walker.x -= walker.speedX;
+    }
+    if (walker.y < 0) {
+      walker.y -= walker.speedY;
+    }
+    if (walker.y > $("#board").height() - $("#walker").height()) {
+      walker.y -= walker.speedY;
+    }
+  }
   function repositionGameItem() {
     walker.x += walker.speedX;
     walker.y += walker.speedY;
