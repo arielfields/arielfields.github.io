@@ -24,6 +24,9 @@ function runProgram() {
     speedX: 0,
     speedY: 0,
   };
+  window.addEventListener("keydown", handleKeyDown);
+  window.addEventListener("keyup", handleKeyUp);
+
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL); // execute newFrame every 0.0166 seconds (60 Frames per second)
 
@@ -71,7 +74,14 @@ function runProgram() {
       walker.speedY = 5;
     }
   }
-  function handleKeyUp(event) {}
+  function handleKeyUp(event) {
+    if (event.which === KEY.LEFT || event.which === KEY.RIGHT) {
+      walker.speedX = 0;
+    }
+    if (event.which === KEY.UP || event.which === KEY.DOWN) {
+      walker.speedY = 0;
+    }
+  }
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -80,7 +90,7 @@ function runProgram() {
     if (walker.x < 0) {
       walker.x -= walker.speedX;
     }
-    if (walker.x > $("#board").width() - $("walker").width()) {
+    if (walker.x > $("#board").width() - $("#walker").width()) {
       walker.x -= walker.speedX;
     }
     if (walker.y < 0) {
